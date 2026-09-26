@@ -2,18 +2,21 @@ import javax.swing.JOptionPane;
 
 public class ShowTwoNumbers {
     public static void main(String[] args) {
-        String str1 = JOptionPane.showInputDialog("Enter first number:");
-        String str2 = JOptionPane.showInputDialog("Enter second number");
+        String strNum1, strNum2;
+        String strNotification = "You've just entered: ";
 
-        double num1 = Double.parseDouble(str1);
-        double num2 = Double.parseDouble(str2);
+        strNum1 = JOptionPane.showInputDialog(null,
+                "Please input the first number: ", "Input the first number",
+                JOptionPane.INFORMATION_MESSAGE);
+        strNotification += strNum1 + " and ";
 
-        double sum = num1 + num2;
+        strNum2 = JOptionPane.showInputDialog(null,
+                "Please input the second number: ", "Input the second number",
+                JOptionPane.INFORMATION_MESSAGE);
+        strNotification += strNum2;
 
-        JOptionPane.showMessageDialog(null,
-            "First number: " + num1 +
-            "\nSecond number: " + num2 +
-            "\nSum = " + sum);
+        JOptionPane.showMessageDialog(null, strNotification,
+                "Show two numbers", JOptionPane.INFORMATION_MESSAGE);
 
         System.exit(0);
     }
